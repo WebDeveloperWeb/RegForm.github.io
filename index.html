@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="Registrationform">
+	    <h1>Registration Form</h1>
+	</div>
+		<div class="main">
+		    
+		        <form  method="post" autocomplete="off" name="google-sheet">
+
+		        	<!-- Name -->
+		            <div class="name1">
+		                <h2 class="name">Name</h2>
+
+						<input class="firstname"  type="text" name="Name" placeholder="" value="" required=""/><br>
+
+		                <label class="firstlabel">First Name</label>
+		                <input class="lastname" type="text" name="last_name"><br>
+		                <label class="lastlabel">Last name</label>
+		            </div>
+		            <!-- Name end -->
+
+		            <!-- Gender -->
+		           
+		            <!-- End Gender -->
+
+					         
+                    <!-- email -->
+
+		           <h2 class="name4">Email</h2>
+							<input class="email" type="email" name="email" placeholder="" value="" required=""/>
+                    <!-- phonr -->
+		            <h2 class="name">Phone</h2>
+					<input class="number" type="text" name="phone" placeholder="" value="" required=""/>
+		            
+		    
+                    <!-- password -->
+		            <h2 class="namepass">Password</h2>
+						<input class="numberpass" type="password" name="pass" placeholder="" value="" required=""/>
+		            
+                    <!-- button reg -->
+		    
+		            <button type="submit" name="submit" value="Login">Register</button>
+		    
+		    
+                 </form>    
+
+        </div>
+
+
+
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyBpU9MyDstlUlGiFx5iaUnsiLBEWGQO3oUnYFm3YLnRzYbS0I/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
